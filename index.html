@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topi Vappa Biryani - Premium Chennai Heritage Restaurant</title>
+  <meta name="description"
+    content="Experience authentic Chennai-style Biryani excellence at Topi Vappa. Premium ingredients, traditional dum cooking, and unparalleled taste delivered to your table.">
+
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+
+<body class="loading-state">
+
+  <!-- Cinematic Page Loader -->
+  <div id="loader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">T</div>
+      <div class="loader-text">TOPI VAPPA</div>
+      <div class="loader-sub">TASTE THE TRADITION</div>
+      <div class="loader-progress"><span class="loader-bar"></span></div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="#home" class="logo-wrapper">
+        <img src="topi_logo.png" alt="Topi Vappa Chennai Biryani Logo" class="logo-img">
+      </a>
+
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">HOME</a></li>
+          <li><a href="#menu-section" class="nav-link">MENU</a></li>
+          <li><a href="#story" class="nav-link">OUR STORY</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Mobile Search Trigger -->
+        <button class="search-trigger-mobile" id="mobile-search-trigger" aria-label="Open search menu">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Shopping Cart Trigger -->
+        <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+
+        <!-- Premium Action Button -->
+        <a href="#contact" class="cta-order-btn">
+          <i class="fa-solid fa-phone"></i>
+          <span>ORDER NOW</span>
+        </a>
+
+        <!-- Mobile Navigation Menu Toggle -->
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Premium Mobile/Tablet Search Overlay -->
+  <div class="mobile-search-overlay" id="mobile-search-overlay">
+    <div class="mobile-search-container">
+      <i class="fa-solid fa-magnifying-glass overlay-search-icon"></i>
+      <input type="text" id="mobile-search-input" placeholder="Search delicious biryani, curries..." aria-label="Search menu on mobile">
+      <button class="close-search-overlay" id="close-search-overlay" aria-label="Close search overlay">&times;</button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="drawer-header">
+      <div class="logo-wrapper">
+        <img src="topi_logo.png" alt="Topi Vappa Chennai Biryani Logo" class="logo-img">
+      </div>
+      <button class="drawer-close" id="drawer-close" aria-label="Close Navigation Drawer">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#home" class="drawer-link">HOME</a></li>
+      <li><a href="#menu-section" class="drawer-link">MENU</a></li>
+      <li><a href="#story" class="drawer-link">OUR STORY</a></li>
+      <li><a href="#contact" class="drawer-link">CONTACT</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <a href="tel:+919876543210" class="drawer-phone-btn">
+        <i class="fa-solid fa-phone"></i> Call to Order
+      </a>
+    </div>
+  </div>
+
+  <!-- Background 3D Canvas Canvas Scene -->
+  <div class="canvas-background-container" id="canvas-container"></div>
+
+  <!-- Main Website Container -->
+  <main class="scroll-container">
+
+    <!-- Hero / Landing Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-glow"></div>
+      <div class="hero-container">
+        <div class="hero-info">
+          <span class="hero-subtitle text-reveal">FULL MENU · CHENNAI HERITAGE</span>
+          <h1 class="hero-title text-reveal">Taste the <span class="gold-gradient">tradition</span></h1>
+          <p class="hero-description text-reveal">
+            From signature dum biryanis to delicate curries and traditional desserts — explore the full Topi Vappa
+            heritage menu. Cooked with premium ingredients and time-honored traditional methods.
+          </p>
+
+          <div class="hero-ctas text-reveal">
+            <a href="#menu-section" class="btn btn-primary">EXPLORE MENU <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#story" class="btn btn-secondary">OUR STORY</a>
+          </div>
+        </div>
+
+        <!-- 3D Centerpiece Render Container -->
+        <div class="hero-visual">
+          <div class="threejs-hero-wrapper" id="threejs-centerpiece-container">
+            <!-- WebGL Canvas injected here -->
+            <div class="interactive-overlay">
+              <span class="drag-hint"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Homepage Featured Items Section -->
+    <section class="featured-section" id="featured-section">
+      <div class="container">
+        <div class="featured-header">
+          <span class="section-label">CHEF'S RECOMMENDATIONS</span>
+          <h2 class="section-title">Signature <span class="gold-gradient">Masterpieces</span></h2>
+          <p class="section-desc">Experience the crown jewels of Chennai's authentic spice heritage. Crafted by our
+            master chefs.</p>
+        </div>
+        <div class="menu-grid" id="featured-grid">
+          <!-- Dynamically populated via app.js -->
+        </div>
+        <div class="featured-cta-wrapper">
+          <a href="#menu-section" class="btn btn-primary">VIEW FULL MENU <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Menu Area Section -->
+    <section class="menu-section" id="menu-section">
+      <div class="menu-decor-line"></div>
+      <div class="container">
+
+        <!-- Search and Global Controls -->
+        <div class="menu-search-wrapper">
+          <div class="search-bar-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="menu-search-input" placeholder="Search dishes..."
+              aria-label="Search dishes from menu">
+            <button class="clear-search-btn" id="clear-search" style="display:none;">&times;</button>
+          </div>
+
+          <!-- Dietary Preferences Toggle Filters -->
+          <div class="dietary-filter-wrapper">
+            <button class="diet-btn active" data-diet="all">ALL</button>
+            <button class="diet-btn" data-diet="veg"><span class="diet-dot veg"></span>VEG</button>
+            <button class="diet-btn" data-diet="non-veg"><span class="diet-dot non-veg"></span>NON-VEG</button>
+            <button class="diet-btn" data-diet="egg"><span class="diet-dot eggetarian"></span>EGG</button>
+          </div>
+        </div>
+
+        <!-- Section / Category Horizontal Navigation Menu -->
+        <div class="category-filter-outer">
+          <div class="category-filter-wrapper" id="category-filter-container">
+            <button class="cat-btn active" data-category="all">ALL</button>
+            <button class="cat-btn" data-category="signature">SIGNATURE BIRYANI</button>
+            <button class="cat-btn" data-category="variants">SPECIAL VARIANTS</button>
+            <button class="cat-btn" data-category="curries">CURRIES & SIDES</button>
+            <button class="cat-btn" data-category="bread">RICE & BREAD</button>
+            <button class="cat-btn" data-category="accompaniments">ACCOMPANIMENTS</button>
+            <button class="cat-btn" data-category="desserts">BEVERAGES & DESSERTS</button>
+            <button class="cat-btn" data-category="combos">SPECIAL COMBOS</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Menu Cards Layout Grid -->
+        <div class="menu-grid" id="menu-grid">
+          <!-- Rendered dynamically via app.js -->
+        </div>
+
+        <!-- Empty Menu State -->
+        <div class="empty-menu-state" id="empty-menu-state" style="display: none;">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <h3>No Dishes Match Your Search</h3>
+          <p>Try searching for another specialty or adjusting your filters!</p>
+          <button class="btn btn-primary" id="reset-menu-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section" id="story">
+      <div class="story-container">
+        <div class="story-visual-side">
+          <div class="story-image-wrapper">
+            <img src="ourstory.jpg" alt="Topi Vappa Heritage Cooking" class="story-img">
+          </div>
+        </div>
+        <div class="story-content-side">
+          <span class="section-label">CHENNAI HERITAGE</span>
+          <h2 class="section-title">A Legacy of Spices & Taste</h2>
+          <div class="story-paragraphs">
+            <p>
+              Topi Vappa Biryani has been synonymous with the rich culinary landscape of Chennai. Built on generations
+              of authentic spice blends, secret family recipes, and the traditional slow-cooking <strong>dum
+                method</strong>.
+            </p>
+            <p>
+              Our signature handi pots are packed with aged long-grain basmati rice, tender pieces of handpicked cuts of
+              meat, and rare spices sourced directly from local farmers in Southern India. We seal our pots with dough
+              to lock in the steam, creating the legendary, rich aroma that hits you the moment the lid is opened.
+            </p>
+          </div>
+          <div class="story-metrics">
+            <div class="metric-item">
+              <span class="metric-num">35+</span>
+              <span class="metric-lbl">Aromatic Masalas</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">100%</span>
+              <span class="metric-lbl">Authentic Basmati</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">15k+</span>
+              <span class="metric-lbl">Happy Foodies Daily</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation & Branch Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Reservation / Order Form -->
+          <div class="reservation-form-wrapper">
+            <div class="form-header">
+              <span class="form-lbl">BOOK A TABLE & ORDER</span>
+              <h2 class="form-title">Reserve Your Dine-in</h2>
+            </div>
+            <form id="reservation-form" class="reservation-form" novalidate>
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="res-name">FULL NAME</label>
+                  <input type="text" id="res-name" required placeholder="Dhanush Kumar">
+                  <span class="error-msg">Name is required</span>
+                </div>
+                <div class="input-group">
+                  <label for="res-phone">PHONE NUMBER</label>
+                  <input type="tel" id="res-phone" required placeholder="+91 98765 43210"
+                    pattern="^[0-9\-\+\s]{10,15}$">
+                  <span class="error-msg">Enter a valid phone number</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="res-guests">NUMBER OF GUESTS</label>
+                  <select id="res-guests" required>
+                    <option value="2">2 People (Couple Dine)</option>
+                    <option value="4" selected>4 People (Family Dine)</option>
+                    <option value="6">6 People (Festive Feast)</option>
+                    <option value="8">8+ People (Group Dining)</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="res-date">DATE & TIME</label>
+                  <input type="datetime-local" id="res-date" required>
+                  <span class="error-msg">Please pick a valid future date</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="res-notes">SPECIAL REQUESTS / FOOD ALLERGIES</label>
+                <textarea id="res-notes" rows="3"
+                  placeholder="Tell us if you prefer extra spicy, or if it is a birthday celebration!"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>SUBMIT RESERVATION</span>
+                <i class="fa-solid fa-circle-check"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Info Cards Side -->
+          <div class="contact-info-wrapper">
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="info-details">
+                <h3>Our Flagship Branch</h3>
+                <p>128, Mount Road, Anna Salai, Chennai, Tamil Nadu - 600002</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-details">
+                <h3>Opening Hours</h3>
+                <p>Monday - Sunday: 11:00 AM - 11:30 PM</p>
+                <span class="late-delivery-tag">⚡ Late Night Delivery available till 2:00 AM!</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+              <div class="info-details">
+                <h3>Customer Support & Orders</h3>
+                <p class="phone-link"><a href="tel:+914424681357">+91 44 2468 1357</a></p>
+                <p class="phone-link"><a href="tel:+919876543210">+91 98765 43210</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Product Detail Subpage View -->
+    <section class="detail-view-section" id="product-detail-view" style="display:none;">
+      <!-- Dynamically rendered via app.js -->
+    </section>
+
+    <!-- Dedicated Mobile/Tablet Order Page View -->
+    <section class="order-view-section" id="mobile-order-view" style="display:none;">
+      <!-- Dynamically rendered via app.js -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-container">
+
+        <!-- Left Side Column -->
+        <div class="footer-col brand-col">
+          <div class="logo-wrapper">
+            <img src="topi_logo.png" alt="Topi Vappa Chennai Biryani Logo" class="logo-img">
+          </div>
+          <p class="footer-brand-desc">
+            Serving premium Chennai-style authentic dum biryanis cooked with love and spices since generations. Taste
+            the rich heritage on every bite.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Center Quick Links -->
+        <div class="footer-col links-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu-section">Menu Options</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#contact">Book Reservation</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Side Newsletter -->
+        <div class="footer-col newsletter-col">
+          <h3>Subscribe for Spice Deals</h3>
+          <p>Sign up to receive 15% off your first online order and seasonal combo alerts!</p>
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" id="news-email" required placeholder="Enter your email address"
+                aria-label="Email address for newsletter subscription">
+              <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+            <span class="news-status-msg" id="news-status"></span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bar -->
+      <div class="footer-copyright-bar">
+        <p>&copy; 2026 Topi Vappa Chennai Biryani Restaurant. All rights reserved. Cooked with Passion.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Interactive Slide-Out Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Your Order Basket</span>
+      </div>
+      <button class="cart-drawer-close" id="cart-close" aria-label="Close Shopping Cart Drawer">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-items-container">
+      <!-- Items dynamically populated via app.js -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-summary-footer">
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">₹0</span>
+      </div>
+      <div class="summary-line discount-line" id="discount-summary-row" style="display:none;">
+        <span>Combo Pack Savings <i class="fa-solid fa-gift"></i></span>
+        <span id="cart-discount">-₹0</span>
+      </div>
+      <div class="summary-line delivery-line">
+        <span>Delivery Fee & Taxes</span>
+        <span class="free-badge">FREE</span>
+      </div>
+      <div class="summary-line total-line">
+        <span>Total Amount</span>
+        <span id="cart-total" class="gold-gradient-text">₹0</span>
+      </div>
+
+      <button class="btn btn-primary checkout-btn" id="checkout-btn">
+        <span>PLACE ORDER ONLINE</span>
+        <i class="fa-solid fa-receipt"></i>
+      </button>
+
+      <p class="checkout-hint">⚡ Guaranteed delivery within 30 minutes or free!</p>
+    </div>
+  </div>
+
+  <!-- Reservation Confirmation / Success Modal Popup -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="success-modal" id="success-modal">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <div class="modal-icon-glow">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h2>Reservation Confirmed!</h2>
+    <p class="modal-text">
+      Namaste, <strong id="modal-guest-name">Guest</strong>! Your table for <strong id="modal-guest-count">4</strong>
+      has been successfully booked at Topi Vappa on <span id="modal-date-val">some date</span>.
+    </p>
+    <p class="modal-subtext">
+      A confirmation SMS and digital ticket details have been sent to your phone <strong
+        id="modal-phone-val">number</strong>. We look forward to serving you the finest Chennai flavors!
+    </p>
+    <button class="btn btn-primary" id="modal-done-btn">GREAT, THANK YOU!</button>
+  </div>
+
+  <!-- Order Placement Success Modal Popup -->
+  <div class="success-modal" id="order-success-modal">
+    <button class="modal-close" id="order-modal-close">&times;</button>
+    <div class="modal-icon-glow order-icon">
+      <i class="fa-solid fa-motorcycle"></i>
+    </div>
+    <h2>Biryani is Cooked & On the Way!</h2>
+    <p class="modal-text">
+      Your delicious feast has been sent to our kitchen. Our master chef is preparing your traditional dum-sealed pot.
+    </p>
+    <div class="order-summary-box">
+      <div class="summary-box-line"><span>ORDER ID:</span><strong id="success-order-id">#TV-827364-CH</strong></div>
+      <div class="summary-box-line"><span>PREPARATION TIME:</span><strong>12 Mins</strong></div>
+      <div class="summary-box-line"><span>DELIVERY AGENT:</span><strong>Ramesh Kumar (⚡ Active)</strong></div>
+    </div>
+    <p class="modal-subtext">
+      Sit tight! Our delivery pilot is primed to dispatch. Follow your live tracking SMS sent to your phone!
+    </p>
+    <button class="btn btn-primary" id="order-done-btn">TRACK MY FEAST!</button>
+  </div>
+
+  <!-- Quick Action Notification Toast -->
+  <div class="toast-notification" id="toast-notification">
+    <span class="toast-icon"><i class="fa-solid fa-cart-plus"></i></span>
+    <span class="toast-message" id="toast-message">Added to basket!</span>
+  </div>
+
+  <!-- Script Libraries (CDN) loaded asynchronously -->
+  <!-- Three.js (WebGL 3D Rendering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP Core (Ultra-high performance javascript animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Core Logic Application JavaScript -->
+  <script src="app.js"></script>
+</body>
+
+</html>
