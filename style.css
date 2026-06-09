@@ -994,8 +994,8 @@ strong {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  min-height: 420px;
   transition: transform var(--transition-fast) ease-out, border-color var(--transition-fast), box-shadow var(--transition-fast);
-  transform-style: preserve-3d;
   will-change: transform, box-shadow, border-color;
   backface-visibility: hidden;
 }
@@ -1160,6 +1160,20 @@ strong {
   overflow: hidden;
 }
 
+.card-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents cropping, makes image fully visible */
+  background-color: rgba(10, 10, 10, 0.5); /* Letterboxing background color */
+  border-radius: var(--radius-rounded);
+  transition: transform var(--transition-normal);
+  display: block;
+}
+
+.card-media-placeholder:hover .card-media-image {
+  transform: scale(1.05);
+}
+
 .card-media-placeholder::before {
   content: '';
   position: absolute;
@@ -1195,8 +1209,6 @@ strong {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  transform: translateZ(20px);
-  /* 3D depth */
 }
 
 .card-header-line {
@@ -1240,8 +1252,6 @@ strong {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-  transform: translateZ(30px);
-  /* Highest 3D depth */
 }
 
 .card-price-wrapper {
@@ -1917,6 +1927,16 @@ strong {
   color: rgba(212, 175, 55, 0.4);
   border: 1px solid rgba(212, 175, 55, 0.1);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cart-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents cropping, makes thumbnail fully visible */
+  background-color: rgba(10, 10, 10, 0.5);
+  border-radius: var(--radius-rounded);
+  display: block;
 }
 
 .cart-item-info {
@@ -2414,6 +2434,7 @@ strong {
   color: rgba(212, 175, 55, 0.4);
   border: 1px solid rgba(212, 175, 55, 0.1);
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .order-page-item-info {
@@ -2894,6 +2915,20 @@ strong {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-deep);
+}
+
+.detail-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents cropping, makes large image fully visible */
+  background-color: rgba(10, 10, 10, 0.5); /* Letterboxing background color */
+  border-radius: var(--radius-very-rounded);
+  transition: transform var(--transition-slow);
+  display: block;
+}
+
+.detail-media-placeholder:hover .detail-media-image {
+  transform: scale(1.03);
 }
 
 .detail-media-placeholder::before {
