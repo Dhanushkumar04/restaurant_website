@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2.0">
+  <link rel="stylesheet" href="style.css?v=2.4">
 </head>
 
 <body class="loading-state">
@@ -57,9 +57,11 @@
         </button>
 
         <!-- Shopping Cart Trigger -->
-        <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span class="cart-count" id="cart-count">0</span>
+        <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart" onclick="toggleCartDrawer(event)">
+          <span class="cart-icon-wrapper">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cart-count">0</span>
+          </span>
         </button>
 
         <!-- Premium Action Button -->
@@ -514,7 +516,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <!-- Core Logic Application JavaScript -->
-  <script src="app.js"></script>
+  <script src="app.js?v=2.4"></script>
 </body>
 
 </html>

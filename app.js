@@ -2417,21 +2417,29 @@ function initEventListeners() {
   }
 
   // Cart Drawer open/close triggers
+  window.toggleCartDrawer = function(e) {
+    if (e) e.preventDefault();
+    console.log("toggleCartDrawer clicked, width:", window.innerWidth);
+    const cartDrawer = document.getElementById("cart-drawer");
+    const cartOverlay = document.getElementById("cart-drawer-overlay");
+    if (window.innerWidth < 1024) {
+      window.location.hash = "#order";
+    } else {
+      if (cartDrawer && cartOverlay) {
+        cartDrawer.classList.add("open");
+        cartOverlay.classList.add("open");
+        updateCartDrawerDOM();
+      }
+    }
+  };
+
   const cartTrigger = document.getElementById("cart-trigger");
   const cartDrawer = document.getElementById("cart-drawer");
   const cartOverlay = document.getElementById("cart-drawer-overlay");
   const cartClose = document.getElementById("cart-close");
 
-  if (cartTrigger && cartDrawer && cartOverlay) {
-    cartTrigger.addEventListener("click", () => {
-      if (window.innerWidth < 1024) {
-        window.location.hash = "#order";
-      } else {
-        cartDrawer.classList.add("open");
-        cartOverlay.classList.add("open");
-        updateCartDrawerDOM();
-      }
-    });
+  if (cartTrigger) {
+    cartTrigger.addEventListener("click", window.toggleCartDrawer);
   }
 
   if (cartClose && cartDrawer && cartOverlay) {
